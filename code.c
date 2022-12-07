@@ -1,16 +1,12 @@
 #include <windows.h>
-
 #include <wincon.h>
-
 #include <stdio.h>
 
 void main()
-
 {
-	printf("task 1\n");
 	char text1[] = "It was readed: ";
 	char text2[] = " File overwritten";
-	char buffer[100]="";
+	char buffer[100] = "";
 
 	DWORD actlen, actlen1;
 	HANDLE hstdin, hstdout;
@@ -30,7 +26,7 @@ void main()
 	if (!hCheck)ExitProcess(0);
 	WriteFile(hstdout, text1, strlen(text1), 0, 0);
 	WriteFile(hstdout, buffer, actlen, &actlen, 0);
-	
+
 	getchar();
 
 	TCHAR fname[30] = TEXT("text.txt");
